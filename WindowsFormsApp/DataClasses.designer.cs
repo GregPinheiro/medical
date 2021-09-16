@@ -57,15 +57,18 @@ namespace WindowsFormsApp
     partial void InsertFornecedore(Fornecedore instance);
     partial void UpdateFornecedore(Fornecedore instance);
     partial void DeleteFornecedore(Fornecedore instance);
-    partial void InsertConsultasMedica(ConsultasMedica instance);
-    partial void UpdateConsultasMedica(ConsultasMedica instance);
-    partial void DeleteConsultasMedica(ConsultasMedica instance);
     partial void InsertCirurgia(Cirurgia instance);
     partial void UpdateCirurgia(Cirurgia instance);
     partial void DeleteCirurgia(Cirurgia instance);
     partial void InsertCirurgiaFornecedor(CirurgiaFornecedor instance);
     partial void UpdateCirurgiaFornecedor(CirurgiaFornecedor instance);
     partial void DeleteCirurgiaFornecedor(CirurgiaFornecedor instance);
+    partial void InsertStatusCirurgia(StatusCirurgia instance);
+    partial void UpdateStatusCirurgia(StatusCirurgia instance);
+    partial void DeleteStatusCirurgia(StatusCirurgia instance);
+    partial void InsertConsultasMedica(ConsultasMedica instance);
+    partial void UpdateConsultasMedica(ConsultasMedica instance);
+    partial void DeleteConsultasMedica(ConsultasMedica instance);
     #endregion
 		
 		public DataClassesDataContext() : 
@@ -170,14 +173,6 @@ namespace WindowsFormsApp
 			}
 		}
 		
-		public System.Data.Linq.Table<ConsultasMedica> ConsultasMedicas
-		{
-			get
-			{
-				return this.GetTable<ConsultasMedica>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Cirurgia> Cirurgias
 		{
 			get
@@ -191,6 +186,22 @@ namespace WindowsFormsApp
 			get
 			{
 				return this.GetTable<CirurgiaFornecedor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<StatusCirurgia> StatusCirurgias
+		{
+			get
+			{
+				return this.GetTable<StatusCirurgia>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ConsultasMedica> ConsultasMedicas
+		{
+			get
+			{
+				return this.GetTable<ConsultasMedica>();
 			}
 		}
 	}
@@ -3009,524 +3020,6 @@ namespace WindowsFormsApp
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ConsultasMedicas")]
-	public partial class ConsultasMedica : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id;
-		
-		private int _PacienteId;
-		
-		private int _MedicoId;
-		
-		private int _HospitalId;
-		
-		private int _CirurgiaId;
-		
-		private int _FornecedorId;
-		
-		private string _Historico;
-		
-		private System.Nullable<System.DateTime> _DataConsulta;
-		
-		private string _Queixa;
-		
-		private string _HistoriaDoenca;
-		
-		private string _ExameFisico;
-		
-		private string _Diagnostico;
-		
-		private string _Exames;
-		
-		private string _IndicacaoCirurgia;
-		
-		private System.Nullable<System.DateTime> _DataPrevista;
-		
-		private string _ResultadoEsperado;
-		
-		private string _Justificativa;
-		
-		private string _PlanejamentoCirurgico;
-		
-		private System.DateTime _CreatedAt;
-		
-		private System.DateTime _UpdatedAt;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
-    partial void OnPacienteIdChanging(int value);
-    partial void OnPacienteIdChanged();
-    partial void OnMedicoIdChanging(int value);
-    partial void OnMedicoIdChanged();
-    partial void OnHospitalIdChanging(int value);
-    partial void OnHospitalIdChanged();
-    partial void OnCirurgiaIdChanging(int value);
-    partial void OnCirurgiaIdChanged();
-    partial void OnFornecedorIdChanging(int value);
-    partial void OnFornecedorIdChanged();
-    partial void OnHistoricoChanging(string value);
-    partial void OnHistoricoChanged();
-    partial void OnDataConsultaChanging(System.Nullable<System.DateTime> value);
-    partial void OnDataConsultaChanged();
-    partial void OnQueixaChanging(string value);
-    partial void OnQueixaChanged();
-    partial void OnHistoriaDoencaChanging(string value);
-    partial void OnHistoriaDoencaChanged();
-    partial void OnExameFisicoChanging(string value);
-    partial void OnExameFisicoChanged();
-    partial void OnDiagnosticoChanging(string value);
-    partial void OnDiagnosticoChanged();
-    partial void OnExamesChanging(string value);
-    partial void OnExamesChanged();
-    partial void OnIndicacaoCirurgiaChanging(string value);
-    partial void OnIndicacaoCirurgiaChanged();
-    partial void OnDataPrevistaChanging(System.Nullable<System.DateTime> value);
-    partial void OnDataPrevistaChanged();
-    partial void OnResultadoEsperadoChanging(string value);
-    partial void OnResultadoEsperadoChanged();
-    partial void OnJustificativaChanging(string value);
-    partial void OnJustificativaChanged();
-    partial void OnPlanejamentoCirurgicoChanging(string value);
-    partial void OnPlanejamentoCirurgicoChanged();
-    partial void OnCreatedAtChanging(System.DateTime value);
-    partial void OnCreatedAtChanged();
-    partial void OnUpdatedAtChanging(System.DateTime value);
-    partial void OnUpdatedAtChanged();
-    #endregion
-		
-		public ConsultasMedica()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
-		{
-			get
-			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this.OnidChanging(value);
-					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PacienteId", DbType="Int NOT NULL")]
-		public int PacienteId
-		{
-			get
-			{
-				return this._PacienteId;
-			}
-			set
-			{
-				if ((this._PacienteId != value))
-				{
-					this.OnPacienteIdChanging(value);
-					this.SendPropertyChanging();
-					this._PacienteId = value;
-					this.SendPropertyChanged("PacienteId");
-					this.OnPacienteIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicoId", DbType="Int NOT NULL")]
-		public int MedicoId
-		{
-			get
-			{
-				return this._MedicoId;
-			}
-			set
-			{
-				if ((this._MedicoId != value))
-				{
-					this.OnMedicoIdChanging(value);
-					this.SendPropertyChanging();
-					this._MedicoId = value;
-					this.SendPropertyChanged("MedicoId");
-					this.OnMedicoIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HospitalId", DbType="Int NOT NULL")]
-		public int HospitalId
-		{
-			get
-			{
-				return this._HospitalId;
-			}
-			set
-			{
-				if ((this._HospitalId != value))
-				{
-					this.OnHospitalIdChanging(value);
-					this.SendPropertyChanging();
-					this._HospitalId = value;
-					this.SendPropertyChanged("HospitalId");
-					this.OnHospitalIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CirurgiaId", DbType="Int NOT NULL")]
-		public int CirurgiaId
-		{
-			get
-			{
-				return this._CirurgiaId;
-			}
-			set
-			{
-				if ((this._CirurgiaId != value))
-				{
-					this.OnCirurgiaIdChanging(value);
-					this.SendPropertyChanging();
-					this._CirurgiaId = value;
-					this.SendPropertyChanged("CirurgiaId");
-					this.OnCirurgiaIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FornecedorId", DbType="Int NOT NULL")]
-		public int FornecedorId
-		{
-			get
-			{
-				return this._FornecedorId;
-			}
-			set
-			{
-				if ((this._FornecedorId != value))
-				{
-					this.OnFornecedorIdChanging(value);
-					this.SendPropertyChanging();
-					this._FornecedorId = value;
-					this.SendPropertyChanged("FornecedorId");
-					this.OnFornecedorIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Historico", DbType="VarChar(MAX)")]
-		public string Historico
-		{
-			get
-			{
-				return this._Historico;
-			}
-			set
-			{
-				if ((this._Historico != value))
-				{
-					this.OnHistoricoChanging(value);
-					this.SendPropertyChanging();
-					this._Historico = value;
-					this.SendPropertyChanged("Historico");
-					this.OnHistoricoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataConsulta", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DataConsulta
-		{
-			get
-			{
-				return this._DataConsulta;
-			}
-			set
-			{
-				if ((this._DataConsulta != value))
-				{
-					this.OnDataConsultaChanging(value);
-					this.SendPropertyChanging();
-					this._DataConsulta = value;
-					this.SendPropertyChanged("DataConsulta");
-					this.OnDataConsultaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Queixa", DbType="VarChar(MAX)")]
-		public string Queixa
-		{
-			get
-			{
-				return this._Queixa;
-			}
-			set
-			{
-				if ((this._Queixa != value))
-				{
-					this.OnQueixaChanging(value);
-					this.SendPropertyChanging();
-					this._Queixa = value;
-					this.SendPropertyChanged("Queixa");
-					this.OnQueixaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HistoriaDoenca", DbType="VarChar(MAX)")]
-		public string HistoriaDoenca
-		{
-			get
-			{
-				return this._HistoriaDoenca;
-			}
-			set
-			{
-				if ((this._HistoriaDoenca != value))
-				{
-					this.OnHistoriaDoencaChanging(value);
-					this.SendPropertyChanging();
-					this._HistoriaDoenca = value;
-					this.SendPropertyChanged("HistoriaDoenca");
-					this.OnHistoriaDoencaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExameFisico", DbType="VarChar(MAX)")]
-		public string ExameFisico
-		{
-			get
-			{
-				return this._ExameFisico;
-			}
-			set
-			{
-				if ((this._ExameFisico != value))
-				{
-					this.OnExameFisicoChanging(value);
-					this.SendPropertyChanging();
-					this._ExameFisico = value;
-					this.SendPropertyChanged("ExameFisico");
-					this.OnExameFisicoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diagnostico", DbType="VarChar(MAX)")]
-		public string Diagnostico
-		{
-			get
-			{
-				return this._Diagnostico;
-			}
-			set
-			{
-				if ((this._Diagnostico != value))
-				{
-					this.OnDiagnosticoChanging(value);
-					this.SendPropertyChanging();
-					this._Diagnostico = value;
-					this.SendPropertyChanged("Diagnostico");
-					this.OnDiagnosticoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exames", DbType="VarChar(MAX)")]
-		public string Exames
-		{
-			get
-			{
-				return this._Exames;
-			}
-			set
-			{
-				if ((this._Exames != value))
-				{
-					this.OnExamesChanging(value);
-					this.SendPropertyChanging();
-					this._Exames = value;
-					this.SendPropertyChanged("Exames");
-					this.OnExamesChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IndicacaoCirurgia", DbType="VarChar(MAX)")]
-		public string IndicacaoCirurgia
-		{
-			get
-			{
-				return this._IndicacaoCirurgia;
-			}
-			set
-			{
-				if ((this._IndicacaoCirurgia != value))
-				{
-					this.OnIndicacaoCirurgiaChanging(value);
-					this.SendPropertyChanging();
-					this._IndicacaoCirurgia = value;
-					this.SendPropertyChanged("IndicacaoCirurgia");
-					this.OnIndicacaoCirurgiaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataPrevista", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DataPrevista
-		{
-			get
-			{
-				return this._DataPrevista;
-			}
-			set
-			{
-				if ((this._DataPrevista != value))
-				{
-					this.OnDataPrevistaChanging(value);
-					this.SendPropertyChanging();
-					this._DataPrevista = value;
-					this.SendPropertyChanged("DataPrevista");
-					this.OnDataPrevistaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResultadoEsperado", DbType="VarChar(MAX)")]
-		public string ResultadoEsperado
-		{
-			get
-			{
-				return this._ResultadoEsperado;
-			}
-			set
-			{
-				if ((this._ResultadoEsperado != value))
-				{
-					this.OnResultadoEsperadoChanging(value);
-					this.SendPropertyChanging();
-					this._ResultadoEsperado = value;
-					this.SendPropertyChanged("ResultadoEsperado");
-					this.OnResultadoEsperadoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Justificativa", DbType="VarChar(MAX)")]
-		public string Justificativa
-		{
-			get
-			{
-				return this._Justificativa;
-			}
-			set
-			{
-				if ((this._Justificativa != value))
-				{
-					this.OnJustificativaChanging(value);
-					this.SendPropertyChanging();
-					this._Justificativa = value;
-					this.SendPropertyChanged("Justificativa");
-					this.OnJustificativaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanejamentoCirurgico", DbType="VarChar(MAX)")]
-		public string PlanejamentoCirurgico
-		{
-			get
-			{
-				return this._PlanejamentoCirurgico;
-			}
-			set
-			{
-				if ((this._PlanejamentoCirurgico != value))
-				{
-					this.OnPlanejamentoCirurgicoChanging(value);
-					this.SendPropertyChanging();
-					this._PlanejamentoCirurgico = value;
-					this.SendPropertyChanged("PlanejamentoCirurgico");
-					this.OnPlanejamentoCirurgicoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime NOT NULL")]
-		public System.DateTime CreatedAt
-		{
-			get
-			{
-				return this._CreatedAt;
-			}
-			set
-			{
-				if ((this._CreatedAt != value))
-				{
-					this.OnCreatedAtChanging(value);
-					this.SendPropertyChanging();
-					this._CreatedAt = value;
-					this.SendPropertyChanged("CreatedAt");
-					this.OnCreatedAtChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedAt", DbType="DateTime NOT NULL")]
-		public System.DateTime UpdatedAt
-		{
-			get
-			{
-				return this._UpdatedAt;
-			}
-			set
-			{
-				if ((this._UpdatedAt != value))
-				{
-					this.OnUpdatedAtChanging(value);
-					this.SendPropertyChanging();
-					this._UpdatedAt = value;
-					this.SendPropertyChanged("UpdatedAt");
-					this.OnUpdatedAtChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Cirurgias")]
 	public partial class Cirurgia : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -3890,6 +3383,634 @@ namespace WindowsFormsApp
 					this._UpdatedAt = value;
 					this.SendPropertyChanged("UpdatedAt");
 					this.OnUpdatedAtChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.StatusCirurgias")]
+	public partial class StatusCirurgia : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _options;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnoptionsChanging(string value);
+    partial void OnoptionsChanged();
+    #endregion
+		
+		public StatusCirurgia()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_options", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string options
+		{
+			get
+			{
+				return this._options;
+			}
+			set
+			{
+				if ((this._options != value))
+				{
+					this.OnoptionsChanging(value);
+					this.SendPropertyChanging();
+					this._options = value;
+					this.SendPropertyChanged("options");
+					this.OnoptionsChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ConsultasMedicas")]
+	public partial class ConsultasMedica : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private int _PacienteId;
+		
+		private int _MedicoId;
+		
+		private int _HospitalId;
+		
+		private int _CirurgiaId;
+		
+		private int _FornecedorId;
+		
+		private string _Historico;
+		
+		private System.Nullable<System.DateTime> _DataConsulta;
+		
+		private string _Queixa;
+		
+		private string _HistoriaDoenca;
+		
+		private string _ExameFisico;
+		
+		private string _Diagnostico;
+		
+		private string _Exames;
+		
+		private System.Nullable<bool> _IndicacaoCirurgia;
+		
+		private System.Nullable<System.DateTime> _DataPrevista;
+		
+		private string _ResultadoEsperado;
+		
+		private string _Justificativa;
+		
+		private string _PlanejamentoCirurgico;
+		
+		private System.DateTime _CreatedAt;
+		
+		private System.DateTime _UpdatedAt;
+		
+		private System.Nullable<System.DateTime> _DataCirurgia;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnPacienteIdChanging(int value);
+    partial void OnPacienteIdChanged();
+    partial void OnMedicoIdChanging(int value);
+    partial void OnMedicoIdChanged();
+    partial void OnHospitalIdChanging(int value);
+    partial void OnHospitalIdChanged();
+    partial void OnCirurgiaIdChanging(int value);
+    partial void OnCirurgiaIdChanged();
+    partial void OnFornecedorIdChanging(int value);
+    partial void OnFornecedorIdChanged();
+    partial void OnHistoricoChanging(string value);
+    partial void OnHistoricoChanged();
+    partial void OnDataConsultaChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataConsultaChanged();
+    partial void OnQueixaChanging(string value);
+    partial void OnQueixaChanged();
+    partial void OnHistoriaDoencaChanging(string value);
+    partial void OnHistoriaDoencaChanged();
+    partial void OnExameFisicoChanging(string value);
+    partial void OnExameFisicoChanged();
+    partial void OnDiagnosticoChanging(string value);
+    partial void OnDiagnosticoChanged();
+    partial void OnExamesChanging(string value);
+    partial void OnExamesChanged();
+    partial void OnIndicacaoCirurgiaChanging(System.Nullable<bool> value);
+    partial void OnIndicacaoCirurgiaChanged();
+    partial void OnDataPrevistaChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataPrevistaChanged();
+    partial void OnResultadoEsperadoChanging(string value);
+    partial void OnResultadoEsperadoChanged();
+    partial void OnJustificativaChanging(string value);
+    partial void OnJustificativaChanged();
+    partial void OnPlanejamentoCirurgicoChanging(string value);
+    partial void OnPlanejamentoCirurgicoChanged();
+    partial void OnCreatedAtChanging(System.DateTime value);
+    partial void OnCreatedAtChanged();
+    partial void OnUpdatedAtChanging(System.DateTime value);
+    partial void OnUpdatedAtChanged();
+    partial void OnDataCirurgiaChanging(System.Nullable<System.DateTime> value);
+    partial void OnDataCirurgiaChanged();
+    #endregion
+		
+		public ConsultasMedica()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PacienteId", DbType="Int NOT NULL")]
+		public int PacienteId
+		{
+			get
+			{
+				return this._PacienteId;
+			}
+			set
+			{
+				if ((this._PacienteId != value))
+				{
+					this.OnPacienteIdChanging(value);
+					this.SendPropertyChanging();
+					this._PacienteId = value;
+					this.SendPropertyChanged("PacienteId");
+					this.OnPacienteIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MedicoId", DbType="Int NOT NULL")]
+		public int MedicoId
+		{
+			get
+			{
+				return this._MedicoId;
+			}
+			set
+			{
+				if ((this._MedicoId != value))
+				{
+					this.OnMedicoIdChanging(value);
+					this.SendPropertyChanging();
+					this._MedicoId = value;
+					this.SendPropertyChanged("MedicoId");
+					this.OnMedicoIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HospitalId", DbType="Int NOT NULL")]
+		public int HospitalId
+		{
+			get
+			{
+				return this._HospitalId;
+			}
+			set
+			{
+				if ((this._HospitalId != value))
+				{
+					this.OnHospitalIdChanging(value);
+					this.SendPropertyChanging();
+					this._HospitalId = value;
+					this.SendPropertyChanged("HospitalId");
+					this.OnHospitalIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CirurgiaId", DbType="Int NOT NULL")]
+		public int CirurgiaId
+		{
+			get
+			{
+				return this._CirurgiaId;
+			}
+			set
+			{
+				if ((this._CirurgiaId != value))
+				{
+					this.OnCirurgiaIdChanging(value);
+					this.SendPropertyChanging();
+					this._CirurgiaId = value;
+					this.SendPropertyChanged("CirurgiaId");
+					this.OnCirurgiaIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FornecedorId", DbType="Int NOT NULL")]
+		public int FornecedorId
+		{
+			get
+			{
+				return this._FornecedorId;
+			}
+			set
+			{
+				if ((this._FornecedorId != value))
+				{
+					this.OnFornecedorIdChanging(value);
+					this.SendPropertyChanging();
+					this._FornecedorId = value;
+					this.SendPropertyChanged("FornecedorId");
+					this.OnFornecedorIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Historico", DbType="VarChar(MAX)")]
+		public string Historico
+		{
+			get
+			{
+				return this._Historico;
+			}
+			set
+			{
+				if ((this._Historico != value))
+				{
+					this.OnHistoricoChanging(value);
+					this.SendPropertyChanging();
+					this._Historico = value;
+					this.SendPropertyChanged("Historico");
+					this.OnHistoricoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataConsulta", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataConsulta
+		{
+			get
+			{
+				return this._DataConsulta;
+			}
+			set
+			{
+				if ((this._DataConsulta != value))
+				{
+					this.OnDataConsultaChanging(value);
+					this.SendPropertyChanging();
+					this._DataConsulta = value;
+					this.SendPropertyChanged("DataConsulta");
+					this.OnDataConsultaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Queixa", DbType="VarChar(MAX)")]
+		public string Queixa
+		{
+			get
+			{
+				return this._Queixa;
+			}
+			set
+			{
+				if ((this._Queixa != value))
+				{
+					this.OnQueixaChanging(value);
+					this.SendPropertyChanging();
+					this._Queixa = value;
+					this.SendPropertyChanged("Queixa");
+					this.OnQueixaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HistoriaDoenca", DbType="VarChar(MAX)")]
+		public string HistoriaDoenca
+		{
+			get
+			{
+				return this._HistoriaDoenca;
+			}
+			set
+			{
+				if ((this._HistoriaDoenca != value))
+				{
+					this.OnHistoriaDoencaChanging(value);
+					this.SendPropertyChanging();
+					this._HistoriaDoenca = value;
+					this.SendPropertyChanged("HistoriaDoenca");
+					this.OnHistoriaDoencaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExameFisico", DbType="VarChar(MAX)")]
+		public string ExameFisico
+		{
+			get
+			{
+				return this._ExameFisico;
+			}
+			set
+			{
+				if ((this._ExameFisico != value))
+				{
+					this.OnExameFisicoChanging(value);
+					this.SendPropertyChanging();
+					this._ExameFisico = value;
+					this.SendPropertyChanged("ExameFisico");
+					this.OnExameFisicoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Diagnostico", DbType="VarChar(MAX)")]
+		public string Diagnostico
+		{
+			get
+			{
+				return this._Diagnostico;
+			}
+			set
+			{
+				if ((this._Diagnostico != value))
+				{
+					this.OnDiagnosticoChanging(value);
+					this.SendPropertyChanging();
+					this._Diagnostico = value;
+					this.SendPropertyChanged("Diagnostico");
+					this.OnDiagnosticoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Exames", DbType="VarChar(MAX)")]
+		public string Exames
+		{
+			get
+			{
+				return this._Exames;
+			}
+			set
+			{
+				if ((this._Exames != value))
+				{
+					this.OnExamesChanging(value);
+					this.SendPropertyChanging();
+					this._Exames = value;
+					this.SendPropertyChanged("Exames");
+					this.OnExamesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IndicacaoCirurgia", DbType="Bit")]
+		public System.Nullable<bool> IndicacaoCirurgia
+		{
+			get
+			{
+				return this._IndicacaoCirurgia;
+			}
+			set
+			{
+				if ((this._IndicacaoCirurgia != value))
+				{
+					this.OnIndicacaoCirurgiaChanging(value);
+					this.SendPropertyChanging();
+					this._IndicacaoCirurgia = value;
+					this.SendPropertyChanged("IndicacaoCirurgia");
+					this.OnIndicacaoCirurgiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataPrevista", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataPrevista
+		{
+			get
+			{
+				return this._DataPrevista;
+			}
+			set
+			{
+				if ((this._DataPrevista != value))
+				{
+					this.OnDataPrevistaChanging(value);
+					this.SendPropertyChanging();
+					this._DataPrevista = value;
+					this.SendPropertyChanged("DataPrevista");
+					this.OnDataPrevistaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ResultadoEsperado", DbType="VarChar(MAX)")]
+		public string ResultadoEsperado
+		{
+			get
+			{
+				return this._ResultadoEsperado;
+			}
+			set
+			{
+				if ((this._ResultadoEsperado != value))
+				{
+					this.OnResultadoEsperadoChanging(value);
+					this.SendPropertyChanging();
+					this._ResultadoEsperado = value;
+					this.SendPropertyChanged("ResultadoEsperado");
+					this.OnResultadoEsperadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Justificativa", DbType="VarChar(MAX)")]
+		public string Justificativa
+		{
+			get
+			{
+				return this._Justificativa;
+			}
+			set
+			{
+				if ((this._Justificativa != value))
+				{
+					this.OnJustificativaChanging(value);
+					this.SendPropertyChanging();
+					this._Justificativa = value;
+					this.SendPropertyChanged("Justificativa");
+					this.OnJustificativaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlanejamentoCirurgico", DbType="VarChar(MAX)")]
+		public string PlanejamentoCirurgico
+		{
+			get
+			{
+				return this._PlanejamentoCirurgico;
+			}
+			set
+			{
+				if ((this._PlanejamentoCirurgico != value))
+				{
+					this.OnPlanejamentoCirurgicoChanging(value);
+					this.SendPropertyChanging();
+					this._PlanejamentoCirurgico = value;
+					this.SendPropertyChanged("PlanejamentoCirurgico");
+					this.OnPlanejamentoCirurgicoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTime NOT NULL")]
+		public System.DateTime CreatedAt
+		{
+			get
+			{
+				return this._CreatedAt;
+			}
+			set
+			{
+				if ((this._CreatedAt != value))
+				{
+					this.OnCreatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedAt = value;
+					this.SendPropertyChanged("CreatedAt");
+					this.OnCreatedAtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedAt", DbType="DateTime NOT NULL")]
+		public System.DateTime UpdatedAt
+		{
+			get
+			{
+				return this._UpdatedAt;
+			}
+			set
+			{
+				if ((this._UpdatedAt != value))
+				{
+					this.OnUpdatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedAt = value;
+					this.SendPropertyChanged("UpdatedAt");
+					this.OnUpdatedAtChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DataCirurgia", DbType="DateTime")]
+		public System.Nullable<System.DateTime> DataCirurgia
+		{
+			get
+			{
+				return this._DataCirurgia;
+			}
+			set
+			{
+				if ((this._DataCirurgia != value))
+				{
+					this.OnDataCirurgiaChanging(value);
+					this.SendPropertyChanging();
+					this._DataCirurgia = value;
+					this.SendPropertyChanged("DataCirurgia");
+					this.OnDataCirurgiaChanged();
 				}
 			}
 		}
