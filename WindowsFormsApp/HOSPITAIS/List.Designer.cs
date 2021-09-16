@@ -349,10 +349,12 @@ namespace WindowsFormsApp.HOSPITAIS
             this.ClientSize = new System.Drawing.Size(1227, 584);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBox);
+            this.KeyPreview = true;
             this.Name = "List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Hospitais";
             this.Load += new System.EventHandler(this.List_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuEditar.ResumeLayout(false);
             this.groupBox.ResumeLayout(false);

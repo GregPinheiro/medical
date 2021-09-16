@@ -62,6 +62,14 @@ namespace WindowsFormsApp.CONSULTAS
                 txtPacCelular.Text = datas.Celular;
                 txtPacEmail.Text = datas.Email;
             }
+            else
+            {
+                txtPacNome.Text = "";
+                txtPacCPF.Text = "";
+                txtPacTelefone.Text = "";
+                txtPacCelular.Text = "";
+                txtPacEmail.Text = "";
+            }
         }
 
         private void btMedico_Click(object sender, EventArgs e)
@@ -88,6 +96,15 @@ namespace WindowsFormsApp.CONSULTAS
                 txtMedTelefone1.Text = datas.Telefone1;
                 txtMedCelular.Text = datas.Celular;
                 txtMedEmail.Text = datas.Email;
+            }
+            else
+            {
+                txtMedNome.Text = "";
+                txtMedEspecialidade.Text = "";
+                txtMedCRO_CRM.Text = "";
+                txtMedTelefone1.Text = "";
+                txtMedCelular.Text = "";
+                txtMedEmail.Text = "";
             }
         }
 
@@ -118,6 +135,11 @@ namespace WindowsFormsApp.CONSULTAS
                 txtFornecNome.Text = datas.Nome;
                 txtFornecCNPJ.Text = datas.CNPJ;
             }
+            else
+            {
+                txtFornecNome.Text = "";
+                txtFornecCNPJ.Text = "";
+            }
         }
 
         private void btSearchCirurgia_Click(object sender, EventArgs e)
@@ -140,6 +162,11 @@ namespace WindowsFormsApp.CONSULTAS
 
                 txtCID.Text = datas.CID;
                 txtNomeCirurgia.Text = datas.Nome;
+            }
+            else
+            {
+                txtCID.Text = "";
+                txtNomeCirurgia.Text = "";
             }
         }
 
@@ -168,6 +195,16 @@ namespace WindowsFormsApp.CONSULTAS
                 txtHospCidade.Text = datas.Cidade;
                 txtHospUF.Text = datas.UF;
                 txtHospCEP.Text = datas.CEP;
+            }
+            else
+            {
+                txtHospNome.Text = "";
+                txtHospUnidade.Text = "";
+                txtHospCNPJ.Text = "";
+                txtHospEndereco.Text = "";
+                txtHospCidade.Text = "";
+                txtHospUF.Text = "";
+                txtHospCEP.Text = "";
             }
         }
     }

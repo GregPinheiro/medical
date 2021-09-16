@@ -90,6 +90,19 @@ namespace WindowsFormsApp.MEDICOS
             LoadDataGridView();
         }
 
+        private void List_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         private void dataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = (int)dataGridView.CurrentRow.Cells[0].Value;
