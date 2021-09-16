@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BancoDados" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=localhost;Initial Catalog=BancoDados;Persist Security Info=True;User ID=sa" SettingsObjectName="WindowsFormsApp.Properties.Settings" SettingsPropertyName="BancoDadosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.users" Member="users">
+    <Type Name="user">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="userName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="access" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hospitais" Member="Hospitais">
+    <Type Name="Hospitai">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Unidade" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Contato1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefone1" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Contato2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefone2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Contato3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefone3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Contato4" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email4" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefone4" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Medicos" Member="Medicos">
+    <Type Name="Medico">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CRO_CRM" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Especialidade" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Telefone1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Telefone2" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Consultorio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Secretaria" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MedicoHospital" Member="MedicoHospitals">
+    <Type Name="MedicoHospital">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Convenios" Member="Convenios">
+    <Type Name="Convenio">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Plano" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Acomodacao" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contato" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConvenioHosptal" Member="ConvenioHosptals">
+    <Type Name="ConvenioHosptal">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ConvenioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pacientes" Member="Pacientes">
+    <Type Name="Paciente">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DataNasc" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ConvenioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NoCarteirinha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Validade" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createdAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="obs" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Inclusao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HospitalConvenio" Member="HospitalConvenios">
+    <Type Name="HospitalConvenio">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HospitalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConvenioId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fornecedores" Member="Fornecedores">
+    <Type Name="Fornecedore">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UF" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Contato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConsultasMedicas" Member="ConsultasMedicas">
+    <Type Name="ConsultasMedica">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PacienteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CirurgiaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FornecedorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Historico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DataConsulta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Queixa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HistoriaDoenca" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ExameFisico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Diagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Exames" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IndicacaoCirurgia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DataPrevista" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResultadoEsperado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Justificativa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PlanejamentoCirurgico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cirurgias" Member="Cirurgias">
+    <Type Name="Cirurgia">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CID" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TUS" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Materiais" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Justificativa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CirurgiaFornecedor" Member="CirurgiaFornecedors">
+    <Type Name="CirurgiaFornecedor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CirurgiaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FornecedorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
