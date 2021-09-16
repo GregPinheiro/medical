@@ -239,10 +239,12 @@ namespace WindowsFormsApp.FORNECEDORES
             this.ClientSize = new System.Drawing.Size(1227, 584);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.dataGridView);
+            this.KeyPreview = true;
             this.Name = "List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de Fornecedores";
             this.Load += new System.EventHandler(this.List_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_KeyDown);
             this.groupBox.ResumeLayout(false);
             this.groupBox.PerformLayout();
             this.menuEditar.ResumeLayout(false);

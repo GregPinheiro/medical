@@ -168,7 +168,7 @@ namespace WindowsFormsApp.PACIENTES
                 db.Pacientes.InsertOnSubmit(paciente);
                 db.SubmitChanges();
 
-                MessageBox.Show("Paciente cadastrado com sucesso!!!", "Cadastro de Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Paciente cadastrado com sucesso!!!", "Cadastro de Paciente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 this.Close();
             }
@@ -177,6 +177,7 @@ namespace WindowsFormsApp.PACIENTES
                 MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void loadInfo(int idPaciente)
         {

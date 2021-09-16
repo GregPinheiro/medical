@@ -374,10 +374,12 @@ namespace WindowsFormsApp.PACIENTES
             this.ClientSize = new System.Drawing.Size(1227, 584);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.dataGridView);
+            this.KeyPreview = true;
             this.Name = "List";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Lista de Usuários";
+            this.Text = "Lista de Pacientes";
             this.Load += new System.EventHandler(this.List_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.List_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.menuEditar.ResumeLayout(false);
             this.groupBox.ResumeLayout(false);

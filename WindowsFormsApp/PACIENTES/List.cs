@@ -134,5 +134,18 @@ namespace WindowsFormsApp.PACIENTES
                 this.Close();
             }
         }
+
+        private void List_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Escape:
+                    this.Close();
+                    break;
+
+                default:
+                    break;
+            }
+        }
     }
 }
