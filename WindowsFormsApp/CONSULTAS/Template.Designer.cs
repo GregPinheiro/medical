@@ -44,13 +44,7 @@ namespace WindowsFormsApp.CONSULTAS
             this.txtPacCPF = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.gbMedico = new System.Windows.Forms.GroupBox();
-            this.btMedico = new System.Windows.Forms.Button();
-            this.txtMedEmail = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtMedCelular = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtMedTelefone1 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.btSearchMedico = new System.Windows.Forms.Button();
             this.txtMedCRO_CRM = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtMedEspecialidade = new System.Windows.Forms.TextBox();
@@ -58,15 +52,6 @@ namespace WindowsFormsApp.CONSULTAS
             this.txtMedNome = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.gbHospital = new System.Windows.Forms.GroupBox();
-            this.btSearchHospital = new System.Windows.Forms.Button();
-            this.txtHospCEP = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtHospUF = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.txtHospCidade = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtHospEndereco = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.txtHospCNPJ = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.txtHospUnidade = new System.Windows.Forms.TextBox();
@@ -89,6 +74,7 @@ namespace WindowsFormsApp.CONSULTAS
             this.dtConsulta = new System.Windows.Forms.DateTimePicker();
             this.label26 = new System.Windows.Forms.Label();
             this.gbCirurgia = new System.Windows.Forms.GroupBox();
+            this.btSearchCirurgia = new System.Windows.Forms.Button();
             this.txtNomeCirurgia = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtCID = new System.Windows.Forms.TextBox();
@@ -99,12 +85,26 @@ namespace WindowsFormsApp.CONSULTAS
             this.label6 = new System.Windows.Forms.Label();
             this.cbCirurgia = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btSearchCirurgia = new System.Windows.Forms.Button();
+            this.btSearchFornecedor = new System.Windows.Forms.Button();
             this.txtFornecCNPJ = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.txtFornecNome = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
-            this.btSearchFornecedor = new System.Windows.Forms.Button();
+            this.btSearchHospital = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.dtAprovacao = new System.Windows.Forms.DateTimePicker();
+            this.dtCirurgia = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbStatusCirurgia = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtObservacoes = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtJustificativa = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtPlanejamentoMedico = new System.Windows.Forms.TextBox();
             this.gbPaciente.SuspendLayout();
             this.gbMedico.SuspendLayout();
             this.gbHospital.SuspendLayout();
@@ -251,13 +251,7 @@ namespace WindowsFormsApp.CONSULTAS
             // 
             // gbMedico
             // 
-            this.gbMedico.Controls.Add(this.btMedico);
-            this.gbMedico.Controls.Add(this.txtMedEmail);
-            this.gbMedico.Controls.Add(this.label12);
-            this.gbMedico.Controls.Add(this.txtMedCelular);
-            this.gbMedico.Controls.Add(this.label11);
-            this.gbMedico.Controls.Add(this.txtMedTelefone1);
-            this.gbMedico.Controls.Add(this.label15);
+            this.gbMedico.Controls.Add(this.btSearchMedico);
             this.gbMedico.Controls.Add(this.txtMedCRO_CRM);
             this.gbMedico.Controls.Add(this.label20);
             this.gbMedico.Controls.Add(this.txtMedEspecialidade);
@@ -268,71 +262,20 @@ namespace WindowsFormsApp.CONSULTAS
             this.gbMedico.Margin = new System.Windows.Forms.Padding(4);
             this.gbMedico.Name = "gbMedico";
             this.gbMedico.Padding = new System.Windows.Forms.Padding(4);
-            this.gbMedico.Size = new System.Drawing.Size(1169, 118);
+            this.gbMedico.Size = new System.Drawing.Size(1169, 75);
             this.gbMedico.TabIndex = 2;
             this.gbMedico.TabStop = false;
             this.gbMedico.Text = "Dados do Médico ";
             // 
-            // btMedico
+            // btSearchMedico
             // 
-            this.btMedico.Location = new System.Drawing.Point(446, 34);
-            this.btMedico.Name = "btMedico";
-            this.btMedico.Size = new System.Drawing.Size(32, 23);
-            this.btMedico.TabIndex = 24;
-            this.btMedico.Text = "...";
-            this.btMedico.UseVisualStyleBackColor = true;
-            this.btMedico.Click += new System.EventHandler(this.btMedico_Click);
-            // 
-            // txtMedEmail
-            // 
-            this.txtMedEmail.Enabled = false;
-            this.txtMedEmail.Location = new System.Drawing.Point(682, 73);
-            this.txtMedEmail.Name = "txtMedEmail";
-            this.txtMedEmail.Size = new System.Drawing.Size(466, 24);
-            this.txtMedEmail.TabIndex = 21;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(622, 76);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 18);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "E-mail:";
-            // 
-            // txtMedCelular
-            // 
-            this.txtMedCelular.Enabled = false;
-            this.txtMedCelular.Location = new System.Drawing.Point(393, 73);
-            this.txtMedCelular.Name = "txtMedCelular";
-            this.txtMedCelular.Size = new System.Drawing.Size(184, 24);
-            this.txtMedCelular.TabIndex = 19;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(329, 76);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(58, 18);
-            this.label11.TabIndex = 18;
-            this.label11.Text = "Celular:";
-            // 
-            // txtMedTelefone1
-            // 
-            this.txtMedTelefone1.Enabled = false;
-            this.txtMedTelefone1.Location = new System.Drawing.Point(109, 73);
-            this.txtMedTelefone1.Name = "txtMedTelefone1";
-            this.txtMedTelefone1.Size = new System.Drawing.Size(182, 24);
-            this.txtMedTelefone1.TabIndex = 14;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(34, 76);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 18);
-            this.label15.TabIndex = 1;
-            this.label15.Text = "Telefone:";
+            this.btSearchMedico.Location = new System.Drawing.Point(446, 34);
+            this.btSearchMedico.Name = "btSearchMedico";
+            this.btSearchMedico.Size = new System.Drawing.Size(32, 23);
+            this.btSearchMedico.TabIndex = 24;
+            this.btSearchMedico.Text = "...";
+            this.btSearchMedico.UseVisualStyleBackColor = true;
+            this.btSearchMedico.Click += new System.EventHandler(this.btMedico_Click);
             // 
             // txtMedCRO_CRM
             // 
@@ -388,106 +331,20 @@ namespace WindowsFormsApp.CONSULTAS
             // gbHospital
             // 
             this.gbHospital.Controls.Add(this.btSearchHospital);
-            this.gbHospital.Controls.Add(this.txtHospCEP);
-            this.gbHospital.Controls.Add(this.label16);
-            this.gbHospital.Controls.Add(this.txtHospUF);
-            this.gbHospital.Controls.Add(this.label17);
-            this.gbHospital.Controls.Add(this.txtHospCidade);
-            this.gbHospital.Controls.Add(this.label18);
-            this.gbHospital.Controls.Add(this.txtHospEndereco);
-            this.gbHospital.Controls.Add(this.label19);
             this.gbHospital.Controls.Add(this.txtHospCNPJ);
             this.gbHospital.Controls.Add(this.label23);
             this.gbHospital.Controls.Add(this.txtHospUnidade);
             this.gbHospital.Controls.Add(this.label24);
             this.gbHospital.Controls.Add(this.txtHospNome);
             this.gbHospital.Controls.Add(this.label25);
-            this.gbHospital.Location = new System.Drawing.Point(12, 258);
+            this.gbHospital.Location = new System.Drawing.Point(12, 215);
             this.gbHospital.Margin = new System.Windows.Forms.Padding(4);
             this.gbHospital.Name = "gbHospital";
             this.gbHospital.Padding = new System.Windows.Forms.Padding(4);
-            this.gbHospital.Size = new System.Drawing.Size(1169, 124);
+            this.gbHospital.Size = new System.Drawing.Size(1169, 83);
             this.gbHospital.TabIndex = 3;
             this.gbHospital.TabStop = false;
             this.gbHospital.Text = "Dados do Hospital";
-            // 
-            // btSearchHospital
-            // 
-            this.btSearchHospital.Location = new System.Drawing.Point(444, 36);
-            this.btSearchHospital.Name = "btSearchHospital";
-            this.btSearchHospital.Size = new System.Drawing.Size(32, 23);
-            this.btSearchHospital.TabIndex = 25;
-            this.btSearchHospital.Text = "...";
-            this.btSearchHospital.UseVisualStyleBackColor = true;
-            this.btSearchHospital.Click += new System.EventHandler(this.btSearchHospital_Click);
-            // 
-            // txtHospCEP
-            // 
-            this.txtHospCEP.Enabled = false;
-            this.txtHospCEP.Location = new System.Drawing.Point(1017, 77);
-            this.txtHospCEP.Name = "txtHospCEP";
-            this.txtHospCEP.Size = new System.Drawing.Size(121, 24);
-            this.txtHospCEP.TabIndex = 21;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(968, 80);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 18);
-            this.label16.TabIndex = 20;
-            this.label16.Text = "CEP:";
-            // 
-            // txtHospUF
-            // 
-            this.txtHospUF.Enabled = false;
-            this.txtHospUF.Location = new System.Drawing.Point(854, 77);
-            this.txtHospUF.Name = "txtHospUF";
-            this.txtHospUF.Size = new System.Drawing.Size(100, 24);
-            this.txtHospUF.TabIndex = 19;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(816, 80);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(32, 18);
-            this.label17.TabIndex = 18;
-            this.label17.Text = "UF:";
-            // 
-            // txtHospCidade
-            // 
-            this.txtHospCidade.Enabled = false;
-            this.txtHospCidade.Location = new System.Drawing.Point(628, 77);
-            this.txtHospCidade.Name = "txtHospCidade";
-            this.txtHospCidade.Size = new System.Drawing.Size(182, 24);
-            this.txtHospCidade.TabIndex = 17;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(564, 80);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(58, 18);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Cidade:";
-            // 
-            // txtHospEndereco
-            // 
-            this.txtHospEndereco.Enabled = false;
-            this.txtHospEndereco.Location = new System.Drawing.Point(94, 77);
-            this.txtHospEndereco.Name = "txtHospEndereco";
-            this.txtHospEndereco.Size = new System.Drawing.Size(464, 24);
-            this.txtHospEndereco.TabIndex = 15;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 80);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(76, 18);
-            this.label19.TabIndex = 14;
-            this.label19.Text = "Endereço:";
             // 
             // txtHospCNPJ
             // 
@@ -556,7 +413,7 @@ namespace WindowsFormsApp.CONSULTAS
             this.gbHistorico.Controls.Add(this.txtDescricao);
             this.gbHistorico.Controls.Add(this.dtConsulta);
             this.gbHistorico.Controls.Add(this.label26);
-            this.gbHistorico.Location = new System.Drawing.Point(12, 389);
+            this.gbHistorico.Location = new System.Drawing.Point(12, 305);
             this.gbHistorico.Name = "gbHistorico";
             this.gbHistorico.Size = new System.Drawing.Size(1169, 336);
             this.gbHistorico.TabIndex = 26;
@@ -684,6 +541,18 @@ namespace WindowsFormsApp.CONSULTAS
             // 
             // gbCirurgia
             // 
+            this.gbCirurgia.Controls.Add(this.txtPlanejamentoMedico);
+            this.gbCirurgia.Controls.Add(this.label12);
+            this.gbCirurgia.Controls.Add(this.txtJustificativa);
+            this.gbCirurgia.Controls.Add(this.label11);
+            this.gbCirurgia.Controls.Add(this.txtObservacoes);
+            this.gbCirurgia.Controls.Add(this.label19);
+            this.gbCirurgia.Controls.Add(this.cbStatusCirurgia);
+            this.gbCirurgia.Controls.Add(this.label18);
+            this.gbCirurgia.Controls.Add(this.dtCirurgia);
+            this.gbCirurgia.Controls.Add(this.dtAprovacao);
+            this.gbCirurgia.Controls.Add(this.label17);
+            this.gbCirurgia.Controls.Add(this.label16);
             this.gbCirurgia.Controls.Add(this.btSearchCirurgia);
             this.gbCirurgia.Controls.Add(this.txtNomeCirurgia);
             this.gbCirurgia.Controls.Add(this.label14);
@@ -694,17 +563,28 @@ namespace WindowsFormsApp.CONSULTAS
             this.gbCirurgia.Controls.Add(this.dtDataPrevista);
             this.gbCirurgia.Controls.Add(this.label6);
             this.gbCirurgia.Controls.Add(this.cbCirurgia);
-            this.gbCirurgia.Location = new System.Drawing.Point(12, 731);
+            this.gbCirurgia.Location = new System.Drawing.Point(12, 647);
             this.gbCirurgia.Name = "gbCirurgia";
-            this.gbCirurgia.Size = new System.Drawing.Size(1169, 114);
+            this.gbCirurgia.Size = new System.Drawing.Size(1169, 232);
             this.gbCirurgia.TabIndex = 27;
             this.gbCirurgia.TabStop = false;
             this.gbCirurgia.Text = "Cirurgia ";
+            this.gbCirurgia.Enter += new System.EventHandler(this.gbCirurgia_Enter);
+            // 
+            // btSearchCirurgia
+            // 
+            this.btSearchCirurgia.Location = new System.Drawing.Point(545, 62);
+            this.btSearchCirurgia.Name = "btSearchCirurgia";
+            this.btSearchCirurgia.Size = new System.Drawing.Size(32, 23);
+            this.btSearchCirurgia.TabIndex = 3;
+            this.btSearchCirurgia.Text = "...";
+            this.btSearchCirurgia.UseVisualStyleBackColor = true;
+            this.btSearchCirurgia.Click += new System.EventHandler(this.btSearchCirurgia_Click);
             // 
             // txtNomeCirurgia
             // 
             this.txtNomeCirurgia.Enabled = false;
-            this.txtNomeCirurgia.Location = new System.Drawing.Point(315, 69);
+            this.txtNomeCirurgia.Location = new System.Drawing.Point(315, 61);
             this.txtNomeCirurgia.Name = "txtNomeCirurgia";
             this.txtNomeCirurgia.Size = new System.Drawing.Size(243, 24);
             this.txtNomeCirurgia.TabIndex = 9;
@@ -712,7 +592,7 @@ namespace WindowsFormsApp.CONSULTAS
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(257, 72);
+            this.label14.Location = new System.Drawing.Point(257, 64);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(49, 18);
             this.label14.TabIndex = 8;
@@ -721,7 +601,7 @@ namespace WindowsFormsApp.CONSULTAS
             // txtCID
             // 
             this.txtCID.Enabled = false;
-            this.txtCID.Location = new System.Drawing.Point(57, 69);
+            this.txtCID.Location = new System.Drawing.Point(57, 61);
             this.txtCID.Name = "txtCID";
             this.txtCID.Size = new System.Drawing.Size(181, 24);
             this.txtCID.TabIndex = 7;
@@ -729,7 +609,7 @@ namespace WindowsFormsApp.CONSULTAS
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(16, 72);
+            this.label13.Location = new System.Drawing.Point(16, 64);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(37, 18);
             this.label13.TabIndex = 6;
@@ -738,7 +618,7 @@ namespace WindowsFormsApp.CONSULTAS
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(608, 27);
+            this.label10.Location = new System.Drawing.Point(608, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(147, 18);
             this.label10.TabIndex = 5;
@@ -746,7 +626,7 @@ namespace WindowsFormsApp.CONSULTAS
             // 
             // txtResultEsperado
             // 
-            this.txtResultEsperado.Location = new System.Drawing.Point(607, 48);
+            this.txtResultEsperado.Location = new System.Drawing.Point(607, 43);
             this.txtResultEsperado.Multiline = true;
             this.txtResultEsperado.Name = "txtResultEsperado";
             this.txtResultEsperado.Size = new System.Drawing.Size(543, 45);
@@ -755,7 +635,7 @@ namespace WindowsFormsApp.CONSULTAS
             // dtDataPrevista
             // 
             this.dtDataPrevista.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataPrevista.Location = new System.Drawing.Point(418, 28);
+            this.dtDataPrevista.Location = new System.Drawing.Point(418, 25);
             this.dtDataPrevista.Name = "dtDataPrevista";
             this.dtDataPrevista.Size = new System.Drawing.Size(140, 24);
             this.dtDataPrevista.TabIndex = 2;
@@ -763,16 +643,16 @@ namespace WindowsFormsApp.CONSULTAS
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(312, 33);
+            this.label6.Location = new System.Drawing.Point(312, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 18);
+            this.label6.Size = new System.Drawing.Size(104, 18);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Data Prevista ";
+            this.label6.Text = "Data Prevista :";
             // 
             // cbCirurgia
             // 
             this.cbCirurgia.AutoSize = true;
-            this.cbCirurgia.Location = new System.Drawing.Point(30, 32);
+            this.cbCirurgia.Location = new System.Drawing.Point(30, 26);
             this.cbCirurgia.Name = "cbCirurgia";
             this.cbCirurgia.Size = new System.Drawing.Size(216, 22);
             this.cbCirurgia.TabIndex = 0;
@@ -786,7 +666,7 @@ namespace WindowsFormsApp.CONSULTAS
             this.groupBox1.Controls.Add(this.label35);
             this.groupBox1.Controls.Add(this.txtFornecNome);
             this.groupBox1.Controls.Add(this.label36);
-            this.groupBox1.Location = new System.Drawing.Point(12, 852);
+            this.groupBox1.Location = new System.Drawing.Point(11, 886);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -795,15 +675,15 @@ namespace WindowsFormsApp.CONSULTAS
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Fornecedor ";
             // 
-            // btSearchCirurgia
+            // btSearchFornecedor
             // 
-            this.btSearchCirurgia.Location = new System.Drawing.Point(545, 70);
-            this.btSearchCirurgia.Name = "btSearchCirurgia";
-            this.btSearchCirurgia.Size = new System.Drawing.Size(32, 23);
-            this.btSearchCirurgia.TabIndex = 3;
-            this.btSearchCirurgia.Text = "...";
-            this.btSearchCirurgia.UseVisualStyleBackColor = true;
-            this.btSearchCirurgia.Click += new System.EventHandler(this.btSearchCirurgia_Click);
+            this.btSearchFornecedor.Location = new System.Drawing.Point(682, 36);
+            this.btSearchFornecedor.Name = "btSearchFornecedor";
+            this.btSearchFornecedor.Size = new System.Drawing.Size(32, 23);
+            this.btSearchFornecedor.TabIndex = 10;
+            this.btSearchFornecedor.Text = "...";
+            this.btSearchFornecedor.UseVisualStyleBackColor = true;
+            this.btSearchFornecedor.Click += new System.EventHandler(this.btSearchFornecedor_Click);
             // 
             // txtFornecCNPJ
             // 
@@ -839,22 +719,149 @@ namespace WindowsFormsApp.CONSULTAS
             this.label36.TabIndex = 0;
             this.label36.Text = "Nome:";
             // 
-            // btSearchFornecedor
+            // btSearchHospital
             // 
-            this.btSearchFornecedor.Location = new System.Drawing.Point(682, 36);
-            this.btSearchFornecedor.Name = "btSearchFornecedor";
-            this.btSearchFornecedor.Size = new System.Drawing.Size(32, 23);
-            this.btSearchFornecedor.TabIndex = 10;
-            this.btSearchFornecedor.Text = "...";
-            this.btSearchFornecedor.UseVisualStyleBackColor = true;
-            this.btSearchFornecedor.Click += new System.EventHandler(this.btSearchFornecedor_Click);
+            this.btSearchHospital.Location = new System.Drawing.Point(444, 36);
+            this.btSearchHospital.Name = "btSearchHospital";
+            this.btSearchHospital.Size = new System.Drawing.Size(32, 23);
+            this.btSearchHospital.TabIndex = 25;
+            this.btSearchHospital.Text = "...";
+            this.btSearchHospital.UseVisualStyleBackColor = true;
+            this.btSearchHospital.Click += new System.EventHandler(this.btSearchHospital_Click);
+            // 
+            // btSair
+            // 
+            this.btSair.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btSair.Location = new System.Drawing.Point(1106, 976);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(75, 25);
+            this.btSair.TabIndex = 44;
+            this.btSair.Text = "Sair";
+            this.btSair.UseVisualStyleBackColor = true;
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.Location = new System.Drawing.Point(1025, 976);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(75, 25);
+            this.btSalvar.TabIndex = 43;
+            this.btSalvar.Text = "Salvar";
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 98);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(118, 18);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Data Aprovação:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 129);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(98, 18);
+            this.label17.TabIndex = 11;
+            this.label17.Text = "Data Cirurgia:";
+            // 
+            // dtAprovacao
+            // 
+            this.dtAprovacao.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtAprovacao.Location = new System.Drawing.Point(140, 93);
+            this.dtAprovacao.Name = "dtAprovacao";
+            this.dtAprovacao.Size = new System.Drawing.Size(140, 24);
+            this.dtAprovacao.TabIndex = 12;
+            // 
+            // dtCirurgia
+            // 
+            this.dtCirurgia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtCirurgia.Location = new System.Drawing.Point(140, 124);
+            this.dtCirurgia.Name = "dtCirurgia";
+            this.dtCirurgia.Size = new System.Drawing.Size(140, 24);
+            this.dtCirurgia.TabIndex = 13;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(312, 98);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(129, 18);
+            this.label18.TabIndex = 14;
+            this.label18.Text = "Status da Cirurgia:";
+            // 
+            // cbStatusCirurgia
+            // 
+            this.cbStatusCirurgia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbStatusCirurgia.FormattingEnabled = true;
+            this.cbStatusCirurgia.Location = new System.Drawing.Point(315, 121);
+            this.cbStatusCirurgia.Name = "cbStatusCirurgia";
+            this.cbStatusCirurgia.Size = new System.Drawing.Size(243, 26);
+            this.cbStatusCirurgia.TabIndex = 15;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(608, 94);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 18);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Observações:";
+            // 
+            // txtObservacoes
+            // 
+            this.txtObservacoes.Location = new System.Drawing.Point(607, 111);
+            this.txtObservacoes.Multiline = true;
+            this.txtObservacoes.Name = "txtObservacoes";
+            this.txtObservacoes.Size = new System.Drawing.Size(543, 45);
+            this.txtObservacoes.TabIndex = 17;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 159);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(84, 18);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "Justificativa";
+            // 
+            // txtJustificativa
+            // 
+            this.txtJustificativa.Location = new System.Drawing.Point(15, 176);
+            this.txtJustificativa.Multiline = true;
+            this.txtJustificativa.Name = "txtJustificativa";
+            this.txtJustificativa.Size = new System.Drawing.Size(543, 45);
+            this.txtJustificativa.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(608, 159);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(151, 18);
+            this.label12.TabIndex = 16;
+            this.label12.Text = "Planejamento Médico";
+            // 
+            // txtPlanejamentoMedico
+            // 
+            this.txtPlanejamentoMedico.Location = new System.Drawing.Point(607, 176);
+            this.txtPlanejamentoMedico.Multiline = true;
+            this.txtPlanejamentoMedico.Name = "txtPlanejamentoMedico";
+            this.txtPlanejamentoMedico.Size = new System.Drawing.Size(543, 45);
+            this.txtPlanejamentoMedico.TabIndex = 19;
             // 
             // Template
             // 
+            this.AcceptButton = this.btSalvar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1200, 1061);
+            this.CancelButton = this.btSair;
+            this.ClientSize = new System.Drawing.Size(1193, 1013);
+            this.Controls.Add(this.btSair);
+            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbCirurgia);
             this.Controls.Add(this.gbHistorico);
@@ -862,6 +869,7 @@ namespace WindowsFormsApp.CONSULTAS
             this.Controls.Add(this.gbMedico);
             this.Controls.Add(this.gbPaciente);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -903,13 +911,7 @@ namespace WindowsFormsApp.CONSULTAS
         private System.Windows.Forms.TextBox txtPacCPF;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gbMedico;
-        private System.Windows.Forms.Button btMedico;
-        private System.Windows.Forms.TextBox txtMedEmail;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtMedCelular;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtMedTelefone1;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btSearchMedico;
         private System.Windows.Forms.TextBox txtMedCRO_CRM;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtMedEspecialidade;
@@ -917,15 +919,6 @@ namespace WindowsFormsApp.CONSULTAS
         private System.Windows.Forms.TextBox txtMedNome;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox gbHospital;
-        private System.Windows.Forms.Button btSearchHospital;
-        private System.Windows.Forms.TextBox txtHospCEP;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtHospUF;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtHospCidade;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox txtHospEndereco;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtHospCNPJ;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox txtHospUnidade;
@@ -964,5 +957,20 @@ namespace WindowsFormsApp.CONSULTAS
         private System.Windows.Forms.TextBox txtFornecNome;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Button btSearchFornecedor;
+        private System.Windows.Forms.Button btSearchHospital;
+        private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Button btSalvar;
+        private System.Windows.Forms.TextBox txtObservacoes;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox cbStatusCirurgia;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker dtCirurgia;
+        private System.Windows.Forms.DateTimePicker dtAprovacao;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtPlanejamentoMedico;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtJustificativa;
+        private System.Windows.Forms.Label label11;
     }
 }

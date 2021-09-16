@@ -139,30 +139,6 @@
       <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
-  <Table Name="dbo.ConsultasMedicas" Member="ConsultasMedicas">
-    <Type Name="ConsultasMedica">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PacienteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="HospitalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CirurgiaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="FornecedorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Historico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="DataConsulta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Queixa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="HistoriaDoenca" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ExameFisico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Diagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Exames" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="IndicacaoCirurgia" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="DataPrevista" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="ResultadoEsperado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="Justificativa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="PlanejamentoCirurgico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
   <Table Name="dbo.Cirurgias" Member="Cirurgias">
     <Type Name="Cirurgia">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -182,6 +158,37 @@
       <Column Name="FornecedorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StatusCirurgias" Member="StatusCirurgias">
+    <Type Name="StatusCirurgia">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="options" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ConsultasMedicas" Member="ConsultasMedicas">
+    <Type Name="ConsultasMedica">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PacienteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MedicoId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HospitalId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CirurgiaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FornecedorId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Historico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DataConsulta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Queixa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HistoriaDoenca" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ExameFisico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Diagnostico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Exames" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IndicacaoCirurgia" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DataPrevista" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResultadoEsperado" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Justificativa" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PlanejamentoCirurgico" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DataCirurgia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

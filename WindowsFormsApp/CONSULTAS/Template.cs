@@ -24,15 +24,29 @@ namespace WindowsFormsApp.CONSULTAS
 
         private void Template_Load(object sender, EventArgs e)
         {
+            FillComboBox();
+
             switch (operation)
             {
                 case 1:
                     this.Text = @"Cadastrar Nova Consulta";
+                    pacienteId = medicoId = hospitalId = 0;
                     break;
 
                 default:
                     this.Close();
                     break;
+            }            
+        }
+
+        private void FillComboBox()
+        {
+            var datas = from a in db.StatusCirurgias orderby a.id ascending select a;
+
+            cbStatusCirurgia.Items.Clear();
+            foreach (var item in datas)
+            {
+                cbStatusCirurgia.Items.Add(item.options);
             }
         }
 
@@ -93,18 +107,12 @@ namespace WindowsFormsApp.CONSULTAS
                 txtMedNome.Text = datas.Nome;
                 txtMedEspecialidade.Text = datas.Especialidade;
                 txtMedCRO_CRM.Text = datas.CRO_CRM;
-                txtMedTelefone1.Text = datas.Telefone1;
-                txtMedCelular.Text = datas.Celular;
-                txtMedEmail.Text = datas.Email;
             }
             else
             {
                 txtMedNome.Text = "";
                 txtMedEspecialidade.Text = "";
                 txtMedCRO_CRM.Text = "";
-                txtMedTelefone1.Text = "";
-                txtMedCelular.Text = "";
-                txtMedEmail.Text = "";
             }
         }
 
@@ -139,6 +147,92 @@ namespace WindowsFormsApp.CONSULTAS
             {
                 txtFornecNome.Text = "";
                 txtFornecCNPJ.Text = "";
+            }
+        }
+
+        private void gbCirurgia_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            switch (operation)
+            {
+                case 1:
+                    if (VerifyInfo())
+                    {
+                        Create();
+                    }
+                    break;
+
+                default:
+                    this.Close();
+                    break;
+            }
+        }
+
+        private bool VerifyInfo()
+        {
+            if (pacienteId.Equals(0))
+            {
+                MessageBox.Show("Selecione o paciente da consulta", "Paciente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btSearchPaciente.Focus();
+                return false;
+            }
+
+            if (medicoId.Equals(0))
+            {
+                MessageBox.Show("Selecione o médico da consulta", "Médico", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btSearchMedico.Focus();
+                return false;
+            }
+
+            if (hospitalId.Equals(0))
+            {
+                MessageBox.Show("Selecione o hospital da consulta", "Hospital", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                btSearchHospital.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void Create()
+        {
+            try
+            {
+                ConsultasMedica item = new ConsultasMedica();
+                item.PacienteId = pacienteId;
+                item.MedicoId = medicoId;
+                item.HospitalId = hospitalId;
+                item.CirurgiaId = cirurgiaId;
+                item.FornecedorId = fornecedorId;
+                item.Historico = txtDescricao.Text;
+                item.DataConsulta = dtConsulta.Value;
+                item.Queixa = txtQueixa.Text;
+                item.HistoriaDoenca = txtHistDoenca.Text;
+                item.ExameFisico = txtExameFisico.Text;
+                item.Diagnostico = txtDiagnostico.Text;
+                item.IndicacaoCirurgia = cbCirurgia.Checked;
+                item.DataPrevista = dtDataPrevista.Value;
+                item.DataCirurgia = dtCirurgia.Value;
+                item.ResultadoEsperado = txtResultEsperado.Text;
+                item.Justificativa = txtJustificativa.Text;
+                item.PlanejamentoCirurgico = txtPlanejamentoMedico.Text;
+                item.CreatedAt = DateTime.Now;
+                item.UpdatedAt = DateTime.Now;
+
+                db.ConsultasMedicas.InsertOnSubmit(item);
+                db.SubmitChanges();
+
+                MessageBox.Show("Consulta médica criada com sucesso!!!", "Cadastrar Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -191,20 +285,12 @@ namespace WindowsFormsApp.CONSULTAS
                 txtHospNome.Text = datas.Nome;
                 txtHospUnidade.Text = datas.Unidade;
                 txtHospCNPJ.Text = datas.CNPJ;
-                txtHospEndereco.Text = datas.Endereco;
-                txtHospCidade.Text = datas.Cidade;
-                txtHospUF.Text = datas.UF;
-                txtHospCEP.Text = datas.CEP;
             }
             else
             {
                 txtHospNome.Text = "";
                 txtHospUnidade.Text = "";
                 txtHospCNPJ.Text = "";
-                txtHospEndereco.Text = "";
-                txtHospCidade.Text = "";
-                txtHospUF.Text = "";
-                txtHospCEP.Text = "";
             }
         }
     }
