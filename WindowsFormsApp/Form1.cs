@@ -154,5 +154,13 @@ namespace WindowsFormsApp
                 form.ShowDialog();
             }
         }
+
+        private void gerenciarConsultasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (CONSULTAS.List form = new CONSULTAS.List())
+            {
+                form.ShowDialog();
+            }
+        }
     }
 }

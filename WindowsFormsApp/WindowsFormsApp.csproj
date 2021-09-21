@@ -59,6 +59,12 @@
     <Compile Include="CIRURGIAS\Template.Designer.cs">
       <DependentUpon>Template.cs</DependentUpon>
     </Compile>
+    <Compile Include="CONSULTAS\List.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONSULTAS\List.Designer.cs">
+      <DependentUpon>List.cs</DependentUpon>
+    </Compile>
     <Compile Include="CONSULTAS\Template.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CIRURGIAS\Template.resx">
       <DependentUpon>Template.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CONSULTAS\List.resx">
+      <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CONSULTAS\Template.resx">
       <DependentUpon>Template.cs</DependentUpon>

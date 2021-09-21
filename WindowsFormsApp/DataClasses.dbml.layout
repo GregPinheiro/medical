@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.75, 11.375" name="DataClasses">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 13, 11.25" name="DataClasses">
   <DataContextMoniker Name="/DataClassesDataContext" />
   <nestedChildShapes>
     <classShape Id="4b3806a7-4e28-4a9d-82f9-3120e8ffff91" absoluteBounds="1.5, 2, 2, 1.7708968098958331">
@@ -74,10 +74,10 @@
         <elementListCompartment Id="7c398b01-731b-4941-9524-8191b86f1136" absoluteBounds="8.89, 4.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7810d4ce-faa5-4e76-83f5-6a8c2c7f6be7" absoluteBounds="10.5, 6.25, 2, 4.8477197265625">
+    <classShape Id="ce99c9e9-133e-4adc-a45a-6fbe3dc48560" absoluteBounds="10.75, 6, 2, 5.0400211588541657">
       <DataClassMoniker Name="/DataClassesDataContext/ConsultasMedica" />
       <nestedChildShapes>
-        <elementListCompartment Id="4fecb6c2-6c9b-482c-bd12-e51f28b033af" absoluteBounds="10.515, 6.71, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="051b36c5-1413-425d-a75b-1980b3a98e7c" absoluteBounds="10.765, 6.46, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

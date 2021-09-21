@@ -50,11 +50,12 @@ namespace WindowsFormsApp
             this.fornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarNovoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarFornecedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrarNovaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cirurgiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarNovaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.gerenciarCirurgiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarNovaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gerenciarConsultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,21 +234,6 @@ namespace WindowsFormsApp
             this.gerenciarFornecedoresToolStripMenuItem.Text = "Gerenciar Fornecedores";
             this.gerenciarFornecedoresToolStripMenuItem.Click += new System.EventHandler(this.gerenciarFornecedoresToolStripMenuItem_Click);
             // 
-            // consultasToolStripMenuItem
-            // 
-            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarNovaToolStripMenuItem});
-            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
-            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.consultasToolStripMenuItem.Text = "Consultas";
-            // 
-            // cadastrarNovaToolStripMenuItem
-            // 
-            this.cadastrarNovaToolStripMenuItem.Name = "cadastrarNovaToolStripMenuItem";
-            this.cadastrarNovaToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
-            this.cadastrarNovaToolStripMenuItem.Text = "Cadastrar Nova";
-            this.cadastrarNovaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarNovaToolStripMenuItem_Click);
-            // 
             // cirurgiasToolStripMenuItem
             // 
             this.cirurgiasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -260,7 +246,7 @@ namespace WindowsFormsApp
             // cadastrarNovaToolStripMenuItem1
             // 
             this.cadastrarNovaToolStripMenuItem1.Name = "cadastrarNovaToolStripMenuItem1";
-            this.cadastrarNovaToolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
+            this.cadastrarNovaToolStripMenuItem1.Size = new System.Drawing.Size(203, 24);
             this.cadastrarNovaToolStripMenuItem1.Text = "Cadastrar Nova";
             this.cadastrarNovaToolStripMenuItem1.Click += new System.EventHandler(this.cadastrarNovaToolStripMenuItem1_Click);
             // 
@@ -270,6 +256,29 @@ namespace WindowsFormsApp
             this.gerenciarCirurgiasToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
             this.gerenciarCirurgiasToolStripMenuItem.Text = "Gerenciar Cirurgias";
             this.gerenciarCirurgiasToolStripMenuItem.Click += new System.EventHandler(this.gerenciarCirurgiasToolStripMenuItem_Click);
+            // 
+            // consultasToolStripMenuItem
+            // 
+            this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastrarNovaToolStripMenuItem,
+            this.gerenciarConsultasToolStripMenuItem});
+            this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
+            this.consultasToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.consultasToolStripMenuItem.Text = "Consultas";
+            // 
+            // cadastrarNovaToolStripMenuItem
+            // 
+            this.cadastrarNovaToolStripMenuItem.Name = "cadastrarNovaToolStripMenuItem";
+            this.cadastrarNovaToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.cadastrarNovaToolStripMenuItem.Text = "Cadastrar Nova";
+            this.cadastrarNovaToolStripMenuItem.Click += new System.EventHandler(this.cadastrarNovaToolStripMenuItem_Click);
+            // 
+            // gerenciarConsultasToolStripMenuItem
+            // 
+            this.gerenciarConsultasToolStripMenuItem.Name = "gerenciarConsultasToolStripMenuItem";
+            this.gerenciarConsultasToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.gerenciarConsultasToolStripMenuItem.Text = "Gerenciar Consultas";
+            this.gerenciarConsultasToolStripMenuItem.Click += new System.EventHandler(this.gerenciarConsultasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -320,6 +329,7 @@ namespace WindowsFormsApp
         private System.Windows.Forms.ToolStripMenuItem cirurgiasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarNovaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gerenciarCirurgiasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gerenciarConsultasToolStripMenuItem;
     }
 }
 

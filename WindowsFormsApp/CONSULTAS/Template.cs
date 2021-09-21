@@ -13,7 +13,7 @@ namespace WindowsFormsApp.CONSULTAS
     public partial class Template : Form
     {
         DataClassesDataContext db = new DataClassesDataContext();
-        public static int operation;
+        public static int operation, id;
         public static int pacienteId, medicoId, hospitalId, cirurgiaId, fornecedorId;
         public Template()
         {
@@ -31,6 +31,11 @@ namespace WindowsFormsApp.CONSULTAS
                 case 1:
                     this.Text = @"Cadastrar Nova Consulta";
                     pacienteId = medicoId = hospitalId = 0;
+                    break;
+
+                case 2:
+                    this.Text = @"Editar Dados da Consulta";
+                    LoadInfo();
                     break;
 
                 default:
@@ -166,6 +171,13 @@ namespace WindowsFormsApp.CONSULTAS
                     }
                     break;
 
+                case 2:
+                    if (VerifyInfo())
+                    {
+                        Update(id);
+                    }
+                    break;
+
                 default:
                     this.Close();
                     break;
@@ -215,6 +227,7 @@ namespace WindowsFormsApp.CONSULTAS
                 item.ExameFisico = txtExameFisico.Text;
                 item.Diagnostico = txtDiagnostico.Text;
                 item.IndicacaoCirurgia = cbCirurgia.Checked;
+                item.Status = cbStatusCirurgia.SelectedIndex;
                 item.DataPrevista = dtDataPrevista.Value;
                 item.DataCirurgia = dtCirurgia.Value;
                 item.ResultadoEsperado = txtResultEsperado.Text;
@@ -291,6 +304,80 @@ namespace WindowsFormsApp.CONSULTAS
                 txtHospNome.Text = "";
                 txtHospUnidade.Text = "";
                 txtHospCNPJ.Text = "";
+            }
+        }
+
+        private void LoadInfo()
+        {
+            var datas = (from a in db.ConsultasMedicas where a.id.Equals(id) select a).FirstOrDefault();
+
+            pacienteId = datas.PacienteId;
+            medicoId = datas.MedicoId;
+            hospitalId = datas.HospitalId;
+            cirurgiaId = datas.CirurgiaId;
+            fornecedorId = datas.FornecedorId;
+            txtDescricao.Text = datas.Historico;
+            DateTime dt = new DateTime(datas.DataConsulta.Value.Year, datas.DataConsulta.Value.Month, datas.DataConsulta.Value.Day, 0, 0, 0);
+            dtConsulta.Value = dt;
+            txtQueixa.Text = datas.Queixa;
+            txtHistDoenca.Text = datas.HistoriaDoenca;
+            txtExameFisico.Text = datas.ExameFisico;
+            txtDiagnostico.Text = datas.Diagnostico;
+            cbCirurgia.Checked = (bool)datas.IndicacaoCirurgia;
+            cbStatusCirurgia.SelectedIndex = (int)datas.Status;
+            dt = new DateTime(datas.DataPrevista.Value.Year, datas.DataPrevista.Value.Month, datas.DataPrevista.Value.Day, 0, 0, 0);
+            dtDataPrevista.Value = dt;
+            dt = new DateTime(datas.DataCirurgia.Value.Year, datas.DataCirurgia.Value.Month, datas.DataCirurgia.Value.Day, 0, 0, 0);
+            dtCirurgia.Value = dt;
+            txtResultEsperado.Text = datas.ResultadoEsperado;
+            txtJustificativa.Text = datas.Justificativa;
+            txtPlanejamentoMedico.Text = datas.PlanejamentoCirurgico;
+
+            LoadPacienteInfo();
+
+            LoadMedicoInfo();
+
+            LoadHospitalInfo();
+
+            LoadCirurgiaInfo();
+
+            LoadFornecedorInfo();
+        }
+
+        private void Update(int idConsulta)
+        {
+            try
+            {
+                ConsultasMedica item = (from a in db.ConsultasMedicas where a.id.Equals(idConsulta) select a).FirstOrDefault();
+                item.PacienteId = pacienteId;
+                item.MedicoId = medicoId;
+                item.HospitalId = hospitalId;
+                item.CirurgiaId = cirurgiaId;
+                item.FornecedorId = fornecedorId;
+                item.Historico = txtDescricao.Text;
+                item.DataConsulta = dtConsulta.Value;
+                item.Queixa = txtQueixa.Text;
+                item.HistoriaDoenca = txtHistDoenca.Text;
+                item.ExameFisico = txtExameFisico.Text;
+                item.Diagnostico = txtDiagnostico.Text;
+                item.IndicacaoCirurgia = cbCirurgia.Checked;
+                item.Status = cbStatusCirurgia.SelectedIndex;
+                item.DataPrevista = dtDataPrevista.Value;
+                item.DataCirurgia = dtCirurgia.Value;
+                item.ResultadoEsperado = txtResultEsperado.Text;
+                item.Justificativa = txtJustificativa.Text;
+                item.PlanejamentoCirurgico = txtPlanejamentoMedico.Text;
+                item.UpdatedAt = DateTime.Now;
+
+                db.SubmitChanges();
+
+                MessageBox.Show("Consulta médica editar com sucesso!!!", "Editar Dados da Consulta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
