@@ -22,3 +22,4 @@ C:\Users\GREG\Desktop\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.
 C:\Users\GREG\Desktop\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.CONSULTAS.Template.resources
 C:\Users\GREG\Desktop\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.CIRURGIAS.Template.resources
 C:\Users\GREG\Desktop\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.CIRURGIAS.List.resources
+C:\Users\GREG\Desktop\WindowsFormsApp\WindowsFormsApp\obj\Debug\WindowsFormsApp.CONSULTAS.List.resources

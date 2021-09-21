@@ -3542,6 +3542,8 @@ namespace WindowsFormsApp
 		
 		private System.Nullable<System.DateTime> _DataCirurgia;
 		
+		private System.Nullable<int> _Status;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -3588,6 +3590,8 @@ namespace WindowsFormsApp
     partial void OnUpdatedAtChanged();
     partial void OnDataCirurgiaChanging(System.Nullable<System.DateTime> value);
     partial void OnDataCirurgiaChanged();
+    partial void OnStatusChanging(System.Nullable<int> value);
+    partial void OnStatusChanged();
     #endregion
 		
 		public ConsultasMedica()
@@ -4011,6 +4015,26 @@ namespace WindowsFormsApp
 					this._DataCirurgia = value;
 					this.SendPropertyChanged("DataCirurgia");
 					this.OnDataCirurgiaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="Int")]
+		public System.Nullable<int> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this.OnStatusChanging(value);
+					this.SendPropertyChanging();
+					this._Status = value;
+					this.SendPropertyChanged("Status");
+					this.OnStatusChanged();
 				}
 			}
 		}
